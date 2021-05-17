@@ -1,16 +1,104 @@
 @import "animations"
 body
-  padding: 50px
+  // padding: 50px
   font-family: "Didot"
   font-weight: 400
   font-style: normal
-
-a
-  color: #00B7FF
+  margin: 0
+  overflow-x: hidden
 .txtCenter
   text-align: center
   margin: 0em auto
   font-size: 40pt
+.rowContainer
+  display: flex
+  flex-direction: row
+  height: 100%
+.row
+  margin: 1em
+.center
+  align-content: center
+.columnContainer
+  display: flex
+  flex-direction: column
+  width: 100%
+
+.navBar
+  width: 100vw
+  min-height: 10vh
+  background-color: black
+  margin: 0
+  margin-bottom: 35px
+  position: fixed
+  top: 0
+  color: white
+  z-index: 2
+  .rowContainer
+    justify-content: center
+  .navBarLogo
+    img
+      width: 50px
+      margin: 10px
+  .navBarLogo.animate, .navBarMenu.animate
+    animation: fadeIn 1s ease 1s 1 both
+  .navBarMenu
+    position: absolute
+    right: 35px
+    top: 25px
+    opacity: 0
+    i
+      font-size: 1.5em
+      cursor: pointer
+  @media all and ( min-width: 900px )
+    .toggleMenu
+      display: none
+    .navBarLogo
+      position: absolute
+      left: 50px
+      
+      
+  .menuWrap
+    position: absolute
+    ul
+      a
+        text-decoration: none
+        font-size: 1.5em
+      a.active
+        color: #ef5da8
+      i
+        margin: 1em auto
+    @media all and ( max-width: 900px )
+      background-color: white
+      width: 75vw
+      height: 100vh
+      left: 25vw 
+      z-index: 2
+      transition: transform 1s ease
+      transform: translateX(100%)
+      ul
+        li
+          margin-top: 0.5em
+        list-style: none
+        a
+          color: black
+        &:focus
+          color: black
+    @media screen and ( min-width: 900px )
+      transform: none
+      background-color: black
+      width: auto
+      height: auto
+      right: 50px
+      ul
+        a
+          color: white
+          text-decoration: none
+        li
+          display: inline-block
+          margin-left: 50px   
+  .menuWrap.open
+    transform: none
+
 .landing
   background-color: black
   position: absolute
@@ -19,26 +107,77 @@ a
   width: 100vw
   height: 100vh
   color: white
+  transition: transform 1s 
+  transform: none
+  z-index: 3
   .landingLogo
-    text-align: center
     align-self: center
     margin-top: 15vh
     margin-bottom: 15vh
   .content
-    padding: 50px  
-.rowContainer
-  display: flex
-  flex-direction: row
-  height: 100%
+    padding: 50px 
+  i 
+    margin-top: 10vh
+    cursor: pointer
+.landing.animate
+  transform: translateY(-90%)
+  animation-name: fadeOut
+  animation-duration: 0s
+  animation-fill-mode: both
+  animation-timing-function: ease-in-out
+  animation-delay: 1s
 
-.row
-  margin: 1em
 
-.center
-  align-content: center
+.main
+  .white
+    background-color: white
+    color: black
+  .black
+    background-color: black
+    color: white
+  .homeElement:first-child
+    margin-top: 10vh
 
-.columnContainer
-  display: flex
-  flex-direction: column
-  width: 100%
-  
+  .homeElement
+    margin-top: -30vh
+    position: relative
+    p
+      font-family: 'Nunito Sans', sans-serif
+      width: 70vw
+      font-size: 9pt
+    .elementTitle
+      font-size: 2em
+      width: 100%
+    .coverImg
+      width: 90vw
+      height: 60vh
+      object-fit: cover
+      position: relative
+      top: 0
+      left: 0
+      border-radius: 3px
+      filter: drop-shadow(0 4px 1px #ef5da8)
+    .dataContainer
+      padding: 25px 5vw
+      max-width: 90vw
+      position: relative
+      top: -30vh
+      .homeButton
+        justify-self: center
+        align-self: center
+        cursor: pointer
+      .btnHome
+        display: flex
+        flex-direction: row
+        padding-left: 25px
+        width: 20vw
+      .rowContainer
+        padding: 0 
+    .bgBox
+      width: 100vw
+      height: 30vh
+      z-index: -1
+    
+      
+    
+     

@@ -4,5 +4,19 @@ block content
   .landing.rowContainer.center
     .columnContainer.content
       img(src="/images/MalditaLogoWhite.png", alt="").landingLogo
-      .txtCenter.ola BECOME 
+      .txtCenter BECOME 
       .txtCenter MALDITA
+      i.fas.fa-chevron-down.txtCenter#animate
+  .main
+    - var color = false
+    each val in data
+      - color = !color
+      div(class= color ? "white" : "black").homeElement
+        div(class=color ? "black": "white").bgBox
+        .dataContainer
+          img(src='/images/'+ val.img).coverImg
+          .txtCenter.elementTitle= val.title.toUpperCase()
+          .rowContainer
+            p= val.content
+            .btnHome
+              img(src= color ? "/images/ButtonBlack.png" : "/images/ButtonWhite.png").homeButton

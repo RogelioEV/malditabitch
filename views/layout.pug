@@ -1,10 +1,36 @@
 doctype html
 html
   head
-    title= 'MALDITA BITCH' + title
-    link(rel="stylesheet", href="/stylesheets/fonts.css")  
+    title= 'MALDITA BITCH'
+    link(rel="stylesheet", href="/stylesheets/fonts.css")
+    link(rel="preconnect", href="https://fonts.gstatic.com")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;1,400&display=swap")  
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")
+    link(rel='stylesheet', href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=0")
 
   body
+    .navBar
+      .rowContainer.content.bar
+        a(href="/").navBarLogo
+          img(src="/images/MalditaLogoWhite.png", alt="")
+        .menuWrap(data="false")
+          ul
+            li
+              a.toggleMenu
+                i.fas.fa-times
+            li 
+              a(href="/").item.active Home
+            li
+              a(href="/products").item Products
+            li
+              a(href="/about").item About Us
+            li
+              a(href="/bautifulthings").item Beautiful Things
+        a.navBarMenu.toggleMenu
+          i.fas.fa-bars.fa2x 
+    
     block content
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js", integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=", crossorigin="anonymous") 
+    script(src="javascripts/animations.js")
